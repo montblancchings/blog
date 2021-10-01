@@ -28,4 +28,4 @@ struct TwelveOrLess {
 }
 ```
 
-![asdfd](./img/Property_Wrappers1.png)
+![test](./img/1.png)

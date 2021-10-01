@@ -14,18 +14,20 @@
 
 - *get/set은 프로퍼티가 가지는 것인데.. 프로퍼티 래퍼는 프로퍼티에 부여한다? 다른것같은데? 아니 다르지.*
 
+### Example
 
-```swift
-//https://docs.swift.org/swift-book/LanguageGuide/Properties.html
+![Property Wrapper Error](./img/1.png)
 
-@propertyWrapper
-struct TwelveOrLess {
-    private var number = 0
-    var wrappedValue: Int {
-        get { return number }
-        set { number = min(newValue, 12) }
-    }
-}
-```
+![Property Wrapper Define](./img/2.png)
 
-![test](./img/1.png)
+* property wrapper 정의시 필수 프로퍼티 wrappedValue를 정의하였습니다. 나이라는 property Wrapper를 만들었으며, 나이는 입력 시 0이하라면 1로 입력 됩니다.
+
+![Property Wrapper use](./img/3.png)
+* property wrapper에 의해 정의된 Age로 age property를 가진 Person 구조체를 작성하고, 'song'이라는 Person을 age -1로 생성합니다. 이후, song의 age에 1로 저장되어있는것을 확인 할 수 있습니다.
+
+
+
+### 재미
+![Property Wrapper use](./img/4.png)
+
+* property wrapper를 사용하면 내부적으로 property명 앞에 '_'을 붙여서 내부적으로 computed property를 만들어 사용하는걸까?
